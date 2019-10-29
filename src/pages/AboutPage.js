@@ -2,6 +2,8 @@ import React from "react";
 
 import axios from "axios";
 
+import { serviceTransact } from "../config";
+
 import { Header, Container, Table } from "semantic-ui-react";
 
 export default class AboutPage extends React.Component {
@@ -13,11 +15,7 @@ export default class AboutPage extends React.Component {
   }
 
   componentDidMount() {
-    Promise.all([
-      axios.get(
-        `https://laundry-microservice-transact.herokuapp.com/api/v1/services/show_service/`
-      )
-    ])
+    Promise.all([axios.get(`${serviceTransact}/api/v1/services/show_service/`)])
       .then(([res6]) => Promise.all([res6.data]))
       .then(([data6]) =>
         this.setState({

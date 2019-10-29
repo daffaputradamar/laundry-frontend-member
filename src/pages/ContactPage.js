@@ -1,6 +1,8 @@
 import React from "react";
 
 import axios from "axios";
+
+import { serviceTransact } from "../config";
 import {
   Table,
   Form,
@@ -33,9 +35,7 @@ class ContactPage extends React.Component {
 
     axios
       .get(
-        `https://laundry-microservice-transact.herokuapp.com/api/v1/details/${
-          this.state.method
-        }/${this.state.value}`
+        `${serviceTransact}/api/v1/details/${this.state.method}/${this.state.value}`
       )
       .then(response => this.setState({ details: response.data }));
   }
