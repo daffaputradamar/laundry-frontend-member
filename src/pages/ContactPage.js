@@ -35,7 +35,7 @@ class ContactPage extends React.Component {
 
     axios
       .get(
-        `${serviceTransact}/api/v1/details/${this.state.method}/${this.state.value}`
+        `${serviceTransact}/api/v1/detailTransaction/${this.state.method}/${this.state.value}`
       )
       .then(response => this.setState({ details: response.data }));
   }

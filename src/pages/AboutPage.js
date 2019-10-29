@@ -15,7 +15,7 @@ export default class AboutPage extends React.Component {
   }
 
   componentDidMount() {
-    Promise.all([axios.get(`${serviceTransact}/api/v1/services/show_service/`)])
+    Promise.all([axios.get(`${serviceTransact}/api/v1/service/show_service/`)])
       .then(([res6]) => Promise.all([res6.data]))
       .then(([data6]) =>
         this.setState({
