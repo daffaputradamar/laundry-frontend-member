@@ -1,25 +1,26 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { Button, Container, Header, Icon } from "semantic-ui-react";
+import Logo from "../assets/logo.png";
+import { Button, Container, Header, Icon, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    <Header
+    {/* <Header
       as="h1"
       color="teal"
-      content="QLaundry"
-      inverted
+      content="Laundry Pintar"
       style={{
         fontSize: mobile ? "2em" : "4em",
         fontWeight: "normal",
         marginBottom: 0,
-        marginTop: mobile ? "1.5em" : "3em"
+        marginTop: mobile ? "1.5em" : "2em"
       }}
-    />
+    /> */}
+    <Image src={Logo} size="medium" centered />
     <Header
       as="h2"
-      content="Cuci Mudah, Banyak Diskon!"
-      inverted
+      content="Cuci Gampang, Diskonnya Numpuk!"
       style={{
         fontSize: mobile ? "1.5em" : "1.7em",
         fontWeight: "normal",
@@ -28,35 +29,20 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as="h5"
-      color="olive"
-      content="Yuk Gabung jadi member QLaundry untuk dapatkan diskon yang ga ada habis-habisnya!"
-      inverted
+      content="Yuk Gabung jadi member Laundry Pintar buat dapatin diskon yang ga ada habis-habisnya!"
       style={{
         fontSize: mobile ? "1em" : "1.2em",
         fontWeight: "normal",
-        marginTop: mobile ? "0.2em" : "1em"
+        marginTop: mobile ? "0.2em" : "1em",
+        marginBottom: mobile ? "0.2em" : "2em"
       }}
     />
-    <Button
-      primary
-      size="huge"
-      href={"/layanan"}
-      target="_blank"
-      color="teal"
-      inverted
-    >
+    <Button as={Link} to="/layanan" size="huge" color="teal">
       Cek Penawaran Kami
       <Icon name="right arrow" />
     </Button>
 
-    <Button
-      primary
-      size="huge"
-      href={"/proses"}
-      target="_blank"
-      color="olive"
-      inverted
-    >
+    <Button as={Link} to="/proses" basic size="huge" color="teal">
       <Icon name="left arrow" /> Cek Proses Laundry
     </Button>
   </Container>

@@ -9,7 +9,8 @@ import {
   Button,
   Input,
   Container,
-  Header
+  Header,
+  Divider
 } from "semantic-ui-react";
 
 class ContactPage extends React.Component {
@@ -43,12 +44,12 @@ class ContactPage extends React.Component {
   render() {
     return (
       <div>
-        <br />
-        <br />
         <Container text>
-          <Header as="h2" textAlign="center">
+          <br />
+          <Header as="h1" textAlign="center">
             Lihat Proses Laundry
           </Header>
+          <Divider />
           <p>
             <Form>
               <Input

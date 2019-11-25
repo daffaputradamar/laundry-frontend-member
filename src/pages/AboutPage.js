@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { serviceTransact } from "../config";
 
-import { Header, Container, Table } from "semantic-ui-react";
+import { Header, Container, Table, Divider } from "semantic-ui-react";
 
 export default class AboutPage extends React.Component {
   constructor(props) {
@@ -27,33 +27,33 @@ export default class AboutPage extends React.Component {
   render() {
     return (
       <div>
-        <Container>
+        <Container text>
           <br />
-
-          <Header textAlign="center">
-            <h1>Layanan Kami</h1>
-            <Table singleLine color="teal" inverted>
-              <Table.Header>
-                <Table.Row>
-                  <Table.HeaderCell>Paket Layanan</Table.HeaderCell>
-                  <Table.HeaderCell>Tarif</Table.HeaderCell>
-                  <Table.HeaderCell>Durasi</Table.HeaderCell>
-                </Table.Row>
-              </Table.Header>
-              <Table.Body>
-                {this.state.service.map(dt => (
-                  <Table.Row>
-                    <Table.Cell>{dt.serviceName}</Table.Cell>
-                    <Table.Cell>
-                      Rp {new Intl.NumberFormat(["ban", "id"]).format(dt.tarif)}{" "}
-                      / {dt.unit}
-                    </Table.Cell>
-                    <Table.Cell>{dt.days} hari</Table.Cell>
-                  </Table.Row>
-                ))}
-              </Table.Body>
-            </Table>
+          <Header textAlign="center" as="h1">
+            Layanan Kami
           </Header>
+          <Divider />
+          <Table singleLine color="teal">
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Paket Layanan</Table.HeaderCell>
+                <Table.HeaderCell>Tarif</Table.HeaderCell>
+                <Table.HeaderCell>Durasi</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              {this.state.service.map(dt => (
+                <Table.Row>
+                  <Table.Cell>{dt.serviceName}</Table.Cell>
+                  <Table.Cell>
+                    Rp {new Intl.NumberFormat(["ban", "id"]).format(dt.tarif)} /{" "}
+                    {dt.unit}
+                  </Table.Cell>
+                  <Table.Cell>{dt.days} hari</Table.Cell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
         </Container>
       </div>
     );

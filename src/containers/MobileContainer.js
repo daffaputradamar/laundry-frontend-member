@@ -35,7 +35,6 @@ class MobileContainer extends Component {
           <Sidebar
             as={Menu}
             animation="uncover"
-            inverted
             vertical
             visible={sidebarOpened}
           >
@@ -47,14 +46,14 @@ class MobileContainer extends Component {
               to="/layanan"
               active={window.location.pathname === "/layanan"}
             >
-              Layanan
+              Layanan Kami
             </Menu.Item>
             <Menu.Item
               as={Link}
               to="/proses"
               active={window.location.pathname === "/proses"}
             >
-              Proses
+              Cek Proses Laundry
             </Menu.Item>
           </Sidebar>
 
@@ -64,13 +63,12 @@ class MobileContainer extends Component {
             style={{ minHeight: "100vh" }}
           >
             <Segment
-              inverted
               textAlign="center"
               style={{ minHeight: isHome ? 350 : 0, padding: "1em 0em" }}
               vertical
             >
               <Container>
-                <Menu inverted pointing secondary size="large">
+                <Menu pointing secondary size="large">
                   <Menu.Item onClick={this.handleToggle}>
                     <Icon name="sidebar" />
                   </Menu.Item>

@@ -30,14 +30,12 @@ class DesktopContainer extends Component {
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
-            inverted
             textAlign="center"
             style={{ minHeight: isHome ? 700 : 0, padding: "1em 0em" }}
             vertical
           >
             <Menu
               fixed={fixed ? "top" : null}
-              inverted={!fixed}
               pointing={!fixed}
               secondary={!fixed}
               size="large"
@@ -51,14 +49,14 @@ class DesktopContainer extends Component {
                   to="/layanan"
                   active={window.location.pathname === "/layanan"}
                 >
-                  Layanan
+                  Layanan Kami
                 </Menu.Item>
                 <Menu.Item
                   as={Link}
                   to="/proses"
                   active={window.location.pathname === "/proses"}
                 >
-                  Proses
+                  Cek Proses Laundry
                 </Menu.Item>
               </Container>
             </Menu>
