@@ -58,25 +58,10 @@ class ContactPage extends React.Component {
                 action
                 value={this.state.value}
                 onChange={this.changeValue}
-              >
-                <input />
-                {/* <Select compact options={options} /> */}
-                <select onChange={this.changeMethod}>
-                  <option
-                    value="search"
-                    selected={this.state.method === "search"}
-                  >
-                    invoice
-                  </option>
-                </select>
-                <Button
-                  type="submit"
-                  value="Submit"
-                  onClick={this.handleSubmit}
-                >
-                  Search
-                </Button>
-              </Input>
+              />
+              <Button type="submit" value="Submit" onClick={this.handleSubmit}>
+                Search
+              </Button>
             </Form>
           </p>
           <p>
